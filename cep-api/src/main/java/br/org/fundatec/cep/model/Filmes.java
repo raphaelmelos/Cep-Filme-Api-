@@ -10,6 +10,15 @@ import java.util.Objects;
 @Table(name = "filmes")
 public class Filmes {
 
+    public Filmes() {}
+
+    public Filmes(Integer id, Integer ano, String genero, String nome) {
+        this.id = id;
+        this.ano = ano;
+        this.genero = genero;
+        this.nome = nome;
+    }
+
     @Id
     private Integer id;
 

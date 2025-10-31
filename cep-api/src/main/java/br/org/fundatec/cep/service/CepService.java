@@ -23,16 +23,16 @@ public class CepService {
 
     public Cep salvar(@Valid Cep cep) {
         cepRepository.save(cep);
-        return  cep;
+        return cep;
     }
 
     public Cep busca(Integer numCep) {
         Optional<Cep> busca = cepRepository.findById(numCep);
-        return busca.orElseThrow(() ->new RegistroNaoEcontradoException("Cep: "+numCep+" nao encontrado"));
+        return busca.orElseThrow(() -> new RegistroNaoEcontradoException("Cep: " + numCep + " nao encontrado"));
     }
 
     public List<Cep> buscaTodos() {
-        return  StreamSupport.stream(cepRepository.findAll().spliterator(), false).toList();
+        return StreamSupport.stream(cepRepository.findAll().spliterator(), false).toList();
     }
 
     public List<Cep> busca(String nomeCidade) {
